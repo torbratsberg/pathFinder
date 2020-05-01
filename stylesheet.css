@@ -1,3 +1,15 @@
+body{
+    overflow: hidden;
+    background-color: rgb(55, 55, 55);
+}
+
+#characterCanvas{
+    position: absolute;
+    z-index: 0;
+}
+
 #mainCanvas{
     border: solid 2px #000000;
+    z-index: -1;
+    position: absolute;
 }
