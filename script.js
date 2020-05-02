@@ -1,9 +1,10 @@
-// Defines canvas
+// Define background canvas
 var canvas = document.getElementById('mainCanvas');
 var ctx = canvas.getContext('2d');
 ctx.canvas.width  = 1000;
 ctx.canvas.height = 1000;
 
+// Define character canvas
 var canvas1 = document.getElementById('characterCanvas');
 var ctx1 = canvas1.getContext('2d');
 ctx1.canvas.width  = 1000;
@@ -77,26 +78,19 @@ addEventListener("keydown", function (e) {
 );
 
 var a = 0;
-function onTrack() {
 
+function onTrack() {
     var track = track3;
 
     // Check to see if User is on track
     if (meY == track[a][0] && meX == track[a][1]) {
         console.log("--- Detected on track");
+        a++;
     }else {
         alert("You went off the track, try again!");
         window.location.reload();
-        
     }
-    
-    a++;
 
-    // console.log(meY + " me Y position");
-    // console.log(meX + " me X position");
-    // console.log(track1[a][0] + " Y position");
-    // console.log(track1[a][1] + " x position");
-    
     // Notify when track is completed
     if(meY == 925 && meX == 925){
         alert("Track completed! Try another!");
@@ -524,7 +518,8 @@ var track3 = [
       925,
       925
     ]
-  ]
+]
 
+// Execute functions
 makeTiles();
 makeMe();
