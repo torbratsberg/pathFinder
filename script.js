@@ -97,7 +97,7 @@ function onTrack() {
         alert("Track completed! Try another!");
         reset();
         makeMe();
-        MakeTiles();
+        makeTiles();
     }
 }
 

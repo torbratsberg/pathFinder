@@ -6,10 +6,15 @@ body{
 #characterCanvas{
     position: absolute;
     z-index: 0;
+    transform: scale(0.6);
+    top: 0;
+    left: 0;
 }
 
 #mainCanvas{
-    border: solid 2px #000000;
-    z-index: -1;
     position: absolute;
+    z-index: -1;
+    transform: scale(0.6);
+    top: 0;
+    left: 0;
 }
