@@ -88,14 +88,23 @@ function onTrack() {
         a++;
     }else {
         alert("You went off the track, try again!");
-        window.location.reload();
+        reset();
+        makeMe();
     }
 
     // Notify when track is completed
     if(meY == 925 && meX == 925){
         alert("Track completed! Try another!");
-        window.location.reload();
+        reset();
+        makeMe();
+        MakeTiles();
     }
+}
+
+function reset() {
+    a = 0;
+    meY = 25;
+    meX = 25;
 }
 
 // Tracks
