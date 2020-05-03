@@ -109,7 +109,8 @@ function onTrack() {
 		} else if (level != tracks.length) {
 		level++;
         	alert("Track completed! Try another one!");
-        	completeReset();
+        	reset();
+			makeTiles();
 		}
     }
 }
