@@ -1,20 +1,31 @@
 body{
-    overflow: hidden;
     background-color: rgb(60, 60, 60);
+    margin: 30px 0 0 50px;
 }
+
+h1{
+    color: #e7e7e7;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    color: #e7e7e7;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 #characterCanvas{
     position: absolute;
     z-index: 0;
-    transform: scale(0.6);
-    top: 0;
-    left: 0;
+    height: 600px;
+    top: 170px;
+    left: 50px;
 }
 
 #mainCanvas{
     position: absolute;
     z-index: -1;
-    transform: scale(0.6);
-    top: 0;
-    left: 0;
+    height: 600px;
+    top: 170px;
+    left: 50px;
 }
