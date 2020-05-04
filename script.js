@@ -1,17 +1,17 @@
 // Define background canvas
-var canvas = document.getElementById('mainCanvas');
-var ctx = canvas.getContext('2d');
+let canvas = document.getElementById('mainCanvas');
+let ctx = canvas.getContext('2d');
 ctx.canvas.width  = 1000;
 ctx.canvas.height = 1000;
 
 // Define character canvas
-var canvas1 = document.getElementById('characterCanvas');
-var ctx1 = canvas1.getContext('2d');
+let canvas1 = document.getElementById('characterCanvas');
+let ctx1 = canvas1.getContext('2d');
 ctx1.canvas.width  = 1000;
 ctx1.canvas.height = 1000;
 
 // Shows which level you are on and tells you you're finished
-var level = 0;
+let level = 0;
 function whichLevel() {
 	document.getElementById("level").innerHTML = "Level: " + (level + 1) + "/" + tracks.length;
 	if (level >= tracks.length) {
@@ -22,18 +22,18 @@ function whichLevel() {
 
   // Generates random colors for makeTiles()
 function randomColor() {
-    var r = Math.floor(Math.random() * 200 + 55);
-    var g = Math.floor(Math.random() * 200 + 55);
-    var b = Math.floor(Math.random() * 200 + 55);
-    var color = "rgb(" + r.toString() + "," + g.toString() + "," + b.toString() + ")";
+    const r = Math.floor(Math.random() * 200 + 55);
+    const g = Math.floor(Math.random() * 200 + 55);
+    const b = Math.floor(Math.random() * 200 + 55);
+    const color = "rgb(" + r.toString() + "," + g.toString() + "," + b.toString() + ")";
     return color;
 }
 
 // Fills canvas with 100 random colored tiles
 function makeTiles() {
     ctx.clearRect(0, 0, 1000, 1000);
-    var tilesY = 0;
-    var tilesX = 0;
+    let tilesY = 0;
+    let tilesX = 0;
     for(let l = 0; l < 10; l++) {    
         for(let i = 0; i < 10; i++) {
             ctx.fillStyle = randomColor();
@@ -46,11 +46,11 @@ function makeTiles() {
 }
 
 // Code to make tracks
-var newTrack = [];
+let newTrack = [];
 
 // Define start positions for makeMe()
-var meY = 25;
-var meX = 25;
+let meY = 25;
+let meX = 25;
 
 // Draw the character the player controls
 function makeMe() {
@@ -61,7 +61,7 @@ function makeMe() {
     ctx1.fillRect(meY, meX, 50, 50);
 
     // Code to make tracks
-    var xxx = [meY, meX];
+    let xxx = [meY, meX];
     newTrack.push(xxx);
 }
 
@@ -87,7 +87,7 @@ addEventListener("keydown", function (e) {
 }
 );
 
-var a = 0;
+let a = 0;
 function onTrack() {
     let track = tracks[level];
 
@@ -107,7 +107,7 @@ function onTrack() {
 			makeMe();
 			
 		} else if (level != tracks.length) {
-		level++;
+			level++;
         	alert("Track completed! Try another one!");
         	reset();
 			makeTiles();
@@ -131,6 +131,7 @@ function completeReset() {
 	level = 0;
 	makeMe();
 	makeTiles();
+	whichLevel();
 }
 
 // Tracks
